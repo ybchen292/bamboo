@@ -1,17 +1,112 @@
 <template>
-  <div id="app">
-    <router-view>
-      <router-link to="/">Home</router-link>
-    </router-view>
+  <div id="app" :style="{left:appL+'px'}">
+    <headers />
+    <div>
+      <span @click="menuCK" class="menutext" :style="menutext">MENU</span>
+      <div class="menu" :style="{left:menuL+'px'}">
+        <ul>
+          <li>
+            <div class="imgPic"></div>
+          </li>
+          <li>首页</li>
+          <li>文章分类</li>
+          <li>关于我们</li>
+        </ul>
+      </div>
+    </div>
+    <wrap />
   </div>
 </template>
 
-<style >
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  color: white;
+<script>
+import headers from "@/components/header.vue";
+import wrap from "@/components/wrap.vue";
+export default {
+  data() {
+    return {
+      appL: 0,
+      menuL: -200,
+      menutext: {
+        left: "1%",
+        backgroundColor: "#000",
+        color: "#fff"
+      }
+    };
+  },
+  methods: {
+    menuCK: function() {
+      this.appL === 0
+        ? ((this.appL = 200),
+          (this.menuL = 0),
+          (this.menutext = {
+            left: "9%",
+            backgroundColor: "#fff",
+            color: "#000"
+          }))
+        : ((this.appL = 0),
+          (this.menuL = -200),
+          (this.menutext = {
+            left: "1%",
+            backgroundColor: "#000",
+            color: "#fff"
+          }));
+    }
+  },
+  components: {
+    headers,
+    wrap
+  }
+};
+</script>
+
+<style>
+#app {
+  height: auto;
+  position: relative;
+  transition: all 0.3s;
+  background-color: #2c2a2a;
+  overflow: hidden;
+}
+#app .menutext {
+  display: inline-block;
+  position: fixed;
+  top: 1%;
+  padding: 5px 15px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  background-color: #2c2a2a;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s;
+  z-index: 100;
+}
+#app .menu {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  background-color: #191919;
+  width: 200px;
+  transition: all 0.3s;
+}
+
+#app .menu li {
+  line-height: 50px;
+  text-align: center;
+}
+
+#app .menu li:nth-child(1) {
+  margin-top: 30px;
+}
+#app .menu li:nth-child(2) {
+  margin-top: 70px;
+}
+#app .menu .imgPic {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: url("./static/images/pic.jpg") no-repeat 100%/100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>

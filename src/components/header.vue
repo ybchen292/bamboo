@@ -2,16 +2,7 @@
   <div class="header">
     <div class="content">
       <h1>C</h1>
-      <h7>问你有几度</h7>
-    </div>
-    <span>MENU</span>
-    <div class="menu">
-      <ul>
-        <li>测试</li>
-        <li>测试</li>
-        <li>测试</li>
-        <li>测试</li>
-      </ul>
+      <h6>问你有几度</h6>
     </div>
   </div>
 </template>
@@ -19,12 +10,22 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      headerL: 0,
+      menuL: -200
+    };
+  },
+  methods: {
+    menuCK: function() {
+      this.headerL === 0
+        ? ((this.headerL = 200), (this.menuL = 0))
+        : ((this.headerL = 0), (this.menuL = -200));
+    }
   }
 };
 </script>
 
-<style scope>
+<style scoped>
 .header {
   position: relative;
   width: 100%;
@@ -40,21 +41,5 @@ export default {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-.header span {
-  display: inline-block;
-  position: absolute;
-  top: 2%;
-  left: 1%;
-  padding: 5px 10px;
-  border: 1px solid #ffffff;
-  border-radius: 20px;
-  background-color: #000000;
-}
-.header .menu {
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  right: 0;
 }
 </style>

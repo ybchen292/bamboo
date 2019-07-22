@@ -1,16 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import header from './components/header.vue'
 
 Vue.use(Router)
 
 
 const route = [{
-    path: '/',
-    name: 'home',
-    component: Home
-}, {
     path: '/about',
     name: 'about',
     // route level code-splitting
