@@ -8,19 +8,27 @@
           <li>
             <div class="imgPic"></div>
           </li>
-          <li>首页</li>
-          <li>文章分类</li>
-          <li>关于我们</li>
+          <li>
+            <router-link to="/wrap">首页</router-link>
+          </li>
+          <li>
+            <router-link to="/about">文章分类</router-link>
+          </li>
+          <li>
+            <router-link to="/about">关于我们</router-link>
+          </li>
         </ul>
       </div>
     </div>
-    <wrap />
+    <router-view></router-view>
+    <footers />
   </div>
 </template>
 
 <script>
 import headers from "@/components/header.vue";
 import wrap from "@/components/wrap.vue";
+import footers from "@/components/footer.vue";
 export default {
   data() {
     return {
@@ -52,9 +60,11 @@ export default {
           }));
     }
   },
+
   components: {
     headers,
-    wrap
+    wrap,
+    footers
   }
 };
 </script>
@@ -92,6 +102,17 @@ export default {
 #app .menu li {
   line-height: 50px;
   text-align: center;
+  cursor: pointer;
+}
+
+#app .menu li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+#app .menu li:hover {
+  background-color: #2c2a2a;
 }
 
 #app .menu li:nth-child(1) {
