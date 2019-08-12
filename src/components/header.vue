@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div id="header">
     <div class="content">
       <!-- <h1>C</h1> -->
       <h1>海内存知己 天涯若比邻</h1>
@@ -10,17 +10,14 @@
 <script>
 export default {
   data() {
-    return {
-      headerL: 0,
-      menuL: -200
-    };
+    return {};
   },
   methods: {}
 };
 </script>
 
 <style scoped>
-.header {
+#header {
   position: relative;
   width: 100%;
   height: 600px;
@@ -29,7 +26,7 @@ export default {
   background-position: center;
 }
 
-.header .content {
+#header .content {
   position: absolute;
   text-align: center;
   left: 50%;
@@ -46,7 +43,7 @@ export default {
   }
 }
 
-.header .content h1 {
+#header .content h1 {
   color: transparent;
   background-clip: text;
   background-size: 200% 100%;

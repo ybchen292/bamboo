@@ -11,11 +11,11 @@
           <li>
             <router-link to="/wrap">首页</router-link>
           </li>
-          <li>
+          <!-- <li>
             <router-link to="/about">文章分类</router-link>
-          </li>
+          </li>-->
           <li>
-            <router-link to="/about">关于我们</router-link>
+            <router-link to="/about">关于</router-link>
           </li>
         </ul>
       </div>
@@ -42,7 +42,7 @@ export default {
     };
   },
   methods: {
-    menuCK: function() {
+    menuCK() {
       this.appL === 0
         ? ((this.appL = 200),
           (this.menuL = 0),
@@ -60,7 +60,13 @@ export default {
           }));
     }
   },
-
+  mounted() {
+    //给左侧导航栏添加点击缩回事件
+    let items = document.querySelectorAll(".menu li");
+    items.forEach((el, index) => {
+      el.addEventListener("click", this.menuCK);
+    });
+  },
   components: {
     headers,
     wrap,
@@ -71,7 +77,7 @@ export default {
 
 <style>
 #app {
-  height: auto;
+  min-height: 100%;
   position: relative;
   transition: all 0.3s;
   background-color: #2c2a2a;

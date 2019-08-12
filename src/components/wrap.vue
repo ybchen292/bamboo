@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div id="wrap">
     <ul>
       <li v-for="item in items">
         <div :style="item.imgurl">
@@ -67,23 +67,23 @@ export default {
 </script>
 
 <style scoped>
-.wrap {
+#wrap {
   width: 50%;
   margin: auto;
 }
 
-.wrap ul li {
+#wrap ul li {
   margin-top: 30px;
   height: 250px;
   margin-bottom: 20px;
 }
 
-.wrap ul li div {
+#wrap ul li div {
   height: 100%;
   cursor: pointer;
 }
 
-.wrap ul li div:hover {
+#wrap ul li div:hover {
   transform: scale(1.05, 1.05);
 }
 </style>

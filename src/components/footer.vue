@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div id="footer">
     <div class="gotop" v-show="gotop" @click="toTop">Top</div>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-.footer .gotop {
+#footer .gotop {
   text-align: center;
   position: fixed;
   right: 50px;
