@@ -13,7 +13,9 @@
           </div>
         </div>
         <div class="swiper-slide">
-          <div class="item"></div>
+          <div class="item">
+            <div id="skills" style="width: 600px;height:400px;"></div>
+          </div>
         </div>
         <div class="swiper-slide">
           <div class="item"></div>
@@ -27,12 +29,14 @@
 
 <script>
 import Swiper from "swiper";
+import Echarts from "echarts";
 
 export default {
   methods: {
     inits() {
       this.initSwiper();
       this.initBg();
+      this.initEcharts();
     },
     initSwiper() {
       new Swiper(".swiper-container", {
@@ -48,9 +52,29 @@ export default {
     initBg() {
       let slides = document.querySelectorAll(".swiper-slide");
       slides.forEach((el, index) => {
-        console.log(1);
         el.style.background = `url(${require(`../static/images/about-${index +
           1}.jpg`)}) no-repeat 100%/100%`;
+      });
+    },
+    initEcharts() {
+      Echarts.init(document.getElementById("skills")).setOption({
+        title: {
+          text: "Skills",
+          x: "center"
+        },
+        color: ["#c23531", "#2f4554", "#6e7074", "#546570", "#c4ccd3"],
+        series: [
+          {
+            type: "pie",
+            data: [
+              { value: 500, name: "Jquery" },
+              { value: 350, name: "HTML" },
+              { value: 300, name: "CSS" },
+              { value: 280, name: "Vue" },
+              { value: 100, name: "Ext" }
+            ]
+          }
+        ]
       });
     }
   },
