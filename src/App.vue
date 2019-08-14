@@ -105,7 +105,7 @@ export default {
   transition: all 0.3s;
 }
 
-#app .menu li {
+#app .menu li:not(:first-child) {
   line-height: 50px;
   text-align: center;
   cursor: pointer;
@@ -117,7 +117,7 @@ export default {
   height: 100%;
 }
 
-#app .menu li:hover {
+#app .menu li:not(:first-child):hover {
   background-color: #2c2a2a;
 }
 

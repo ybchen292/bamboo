@@ -1,10 +1,9 @@
 <template>
   <div id="wrap">
     <ul>
-      <li v-for="item in items">
-        <div :style="item.imgurl">
-          <h3>{{item.title}}</h3>
-        </div>
+      <li v-for="item in items" :style="item.imgurl">
+        <h3>{{item.title}}</h3>
+        <p>别点，还没写</p>
       </li>
     </ul>
   </div>
@@ -16,7 +15,7 @@ export default {
     return {
       items: [
         {
-          title: "测试1",
+          title: "点我",
           imgurl: {
             background:
               "url(" +
@@ -25,7 +24,7 @@ export default {
           }
         },
         {
-          title: "测试1",
+          title: "点我",
           imgurl: {
             background:
               "url(" +
@@ -34,7 +33,7 @@ export default {
           }
         },
         {
-          title: "测试1",
+          title: "点我",
           imgurl: {
             background:
               "url(" +
@@ -43,7 +42,7 @@ export default {
           }
         },
         {
-          title: "测试1",
+          title: "点我",
           imgurl: {
             background:
               "url(" +
@@ -52,7 +51,7 @@ export default {
           }
         },
         {
-          title: "测试1",
+          title: "点我",
           imgurl: {
             background:
               "url(" +
@@ -70,20 +69,22 @@ export default {
 #wrap {
   width: 50%;
   margin: auto;
+  color: #fff;
 }
 
 #wrap ul li {
   margin-top: 30px;
   height: 250px;
   margin-bottom: 20px;
-}
-
-#wrap ul li div {
-  height: 100%;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 2;
 }
 
-#wrap ul li div:hover {
+#wrap ul li:hover {
   transform: scale(1.05, 1.05);
 }
 </style>
