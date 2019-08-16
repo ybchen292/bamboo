@@ -64,9 +64,6 @@
         <div class="swiper-slide">
           <div class="slide-bg"></div>
         </div>
-        <div class="swiper-slide">
-          <div class="slide-bg"></div>
-        </div>
       </div>
 
       <!-- Add Pagination -->
@@ -97,13 +94,6 @@ export default {
         }
       });
     },
-    initBg() {
-      let slides = document.querySelectorAll(".slide-bg");
-      slides.forEach((el, index) => {
-        el.style.background = `url(${require(`../static/images/about-${index +
-          1}.png`)}) no-repeat 100%/100%`;
-      });
-    },
     initEcharts() {
       Echarts.init(document.getElementById("skills")).setOption({
         title: {
@@ -130,6 +120,13 @@ export default {
             ]
           }
         ]
+      });
+    },
+    initBg() {
+      let slides = document.querySelectorAll(".slide-bg");
+      slides.forEach((el, index) => {
+        el.style.background = `url(${require(`../static/images/about-${index +
+          1}.png`)}) no-repeat 100%/100%`;
       });
     }
   },
