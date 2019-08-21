@@ -7,8 +7,8 @@
           <div class="item">
             <div class="pic"></div>
             <div class="explain">
-              您好，我叫陈岳斌，坐标长沙，90后胖boy一枚，是一名前端工程师（其实是枚小白）。
-              <br />18年3月开始工作,目前就职于湖南通亮信息有限公司，负责公司前端页面的开发。配合后台
+              您好，我叫陈岳斌，坐标长沙，90后胖boy一枚，是一名前端工程师,18年3月开始工作。
+              <br />目前就职于湖南通亮信息有限公司，负责公司前端页面的开发。配合后台
               <br />人员实现产品的效果与功能
             </div>
           </div>
@@ -41,7 +41,7 @@
                   </li>
                 </ul>
               </div>
-              <!-- TODO;-->
+              <!-- TODO;公司-->
               <div class="c-rt">
                 <ul class="c-rt-ul">
                   <li class="c-rt-li">
@@ -63,6 +63,13 @@
         </div>
         <div class="swiper-slide">
           <div class="slide-bg"></div>
+          <div class="item merit">
+            <!-- TODO;优缺点 -->
+            <h3>我的优点</h3>
+            <p>熟练HTML,CSS,JS,Jquery,熟练Flex布局，熟悉Vue,Extjs,做过微信小程序</p>
+            <h3>我的缺点</h3>
+            <p>缺点你</p>
+          </div>
         </div>
       </div>
 
@@ -291,5 +298,12 @@ export default {
   font-weight: 500;
   font-size: 16px;
 }
-/* TODO; */
+.swiper-slide .merit {
+  align-items: initial;
+  line-height: 2.5;
+}
+.swiper-slide .merit p {
+  text-indent: 30px;
+}
+/* TODO;CSS尾部 */
 </style>
